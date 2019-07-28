@@ -50,6 +50,10 @@ class Config:
                 {
                     "id": "default-astraea",
                     "href": "https://stac.astraea.earth/api/v2",
+                },
+                {
+                    "id": "default-cbers",
+                    "href": "https://stac.amskepler.com/v07",
                 }
             ]
 

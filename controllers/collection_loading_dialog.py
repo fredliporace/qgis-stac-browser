@@ -4,7 +4,7 @@ import urllib
 from PyQt5 import uic, QtWidgets
 
 from ..utils.config import Config
-from ..utils.logging import error
+from ..utils.logging import error, debug
 from ..utils import ui
 from ..threads.load_collections_thread import LoadCollectionsThread
 

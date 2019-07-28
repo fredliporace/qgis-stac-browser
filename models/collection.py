@@ -20,7 +20,8 @@ class Collection:
 
     @property
     def title(self):
-        return self._json.get('title', None)
+        return self._json.get('title',
+                              self._json.get('id', None))
 
     @property
     def description(self):

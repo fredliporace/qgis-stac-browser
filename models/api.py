@@ -21,6 +21,7 @@ class API:
         ]
 
     def load_collection(self, collection_id):
+        print(f'Loading {collection_id}')
         return Collection(self,
                           network.request(
                               f'{self.href}/collections/{collection_id}'))

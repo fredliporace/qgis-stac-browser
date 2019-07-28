@@ -39,18 +39,23 @@ class Config:
 
         if apis is None:
             apis = [
-                {
-                    "id": "default-staccato",
-                    "href": "https://stac.boundlessgeo.io",
-                },
+                #{
+                #    "id": "default-staccato",
+                #    "href": "https://stac.boundlessgeo.io",
+                #},
                 {
                     "id": "default-sat-api",
                     "href": "https://sat-api.developmentseed.org",
                 },
                 {
-                    "id": "default-astraea",
-                    "href": "https://stac.astraea.earth/api/v2",
+                    "id": "default-cbers",
+                    "href": "https://wtodrztbod.execute-api.us-east-1.amazonaws.com/prod",
+
                 }
+                #{
+                #    "id": "default-astraea",
+                #    "href": "https://stac.astraea.earth/api/v2",
+                #}
             ]
 
         return [API(api) for api in apis]

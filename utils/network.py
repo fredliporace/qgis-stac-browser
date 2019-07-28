@@ -4,16 +4,18 @@ import shutil
 import json
 import os
 
+from ..utils.logging import debug
 
 def ssl_context():
     if os.environ.get('STAC_DEBUG', False):
         return ssl._create_unverified_context()
     return ssl.SSLContext()
 
-
 def request(url, data=None):
     r = urllib.request.Request(url)
+    debug(url)
     if data is not None:
+        debug(json.dumps(data))
         body_bytes = json.dumps(data).encode('utf-8')
         r.add_header('Content-Type', 'application/json; charset=utf-8')
         r.add_header('Content-Length', len(body_bytes))

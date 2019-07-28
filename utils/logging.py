@@ -4,7 +4,6 @@ from qgis.core import QgsMessageLog, Qgis
 def debug(message):
     QgsMessageLog.logMessage(message, level=Qgis.Info)
 
-
 def info(iface, message, duration=5):
     QgsMessageLog.logMessage(message, level=Qgis.Info)
     iface.messageBar().pushMessage(

@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 
 from PyQt5 import uic, QtWidgets, QtCore
@@ -7,7 +8,7 @@ from PyQt5.QtWidgets import (QTreeWidgetItem, QFormLayout)
 from qgis.core import QgsMapLayerProxyModel
 
 from ..utils import ui
-from ..utils.logging import error
+from ..utils.logging import error, debug
 from .extent_selector import ExtentSelector
 
 
@@ -60,6 +61,7 @@ class QueryDialog(QtWidgets.QDialog, FORM_CLASS):
             )
             api_node.setCheckState(0, QtCore.Qt.Unchecked)
             for collection in sorted(api.collections):
+                debug(json.dumps(collection.json))
                 title = collection.title.replace("\n", " ")
                 collection_node = QTreeWidgetItem(api_node)
                 collection_node.setText(0, title)
